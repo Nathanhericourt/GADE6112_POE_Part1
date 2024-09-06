@@ -10,7 +10,7 @@ namespace GADE6112_Part1_ST10094307
     {
         private int x, y;
 
-        Position(int _x,int _y) //constructor
+        public Position(int _x,int _y) //constructor
         {
             _x = x;
             _y = y;
@@ -26,5 +26,7 @@ namespace GADE6112_Part1_ST10094307
             get { return y; }
             set { y = value; }
         }
+
+        
     }   
 }

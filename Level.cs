@@ -48,25 +48,34 @@ namespace GADE6112_Part1_ST10094307
         }
 
         // Private method to create a tile
-        private Tile CreateTile(TileType type, Position position)
+        private Tile CreateTile(TileType type, int x, int y)
         {
-            Tile tile = null;
+            Position position = new Position(x, y);
+            Tile tile;
 
             switch (type)
             {
                 case TileType.Empty:
-                    tile = new Tile(TileType.Empty, position);
+                    tile = new EmptyTile(position);
+                    tiles[position.X, position.Y] = tile;
+                    return tile;
+                default:
+                    tile = new EmptyTile(position);
+                    tiles[position.X, position.Y] = tile;
+                    return tile;
                     break;
-                    case TileType.Wall:
-                    tile = new Tile(TileType.Wall, position);
-                    break;
+                    
+                    //case TileType.Wall:
+
+                    
+                   // return tile;
+                    //break;
                     // Additional cases for other tile types can be added here
             }
 
-            // Place the tile in the level's layout
-            tiles[position.X, position.Y] = tile;
+            
 
-            return tile;
+           
         }
 
         // Method to initialize all tiles to empty
@@ -76,9 +85,7 @@ namespace GADE6112_Part1_ST10094307
             {
                 for (int y = 0; y < height; y++)
                 {
-                    Position position = new int(x, y);
-                   
-                    CreateTile(TileType.Empty, position);
+                    tiles[x, y] = CreateTile(TileType.Empty, x, y);
                 }
             }
         }
@@ -112,14 +119,10 @@ namespace GADE6112_Part1_ST10094307
 
 
         // Overloaded version of CreateTile that accepts x and y integers
-        private Tile CreateTile(TileType type, int x, int y)
-        {
-            // Create a new Position object and call the existing CreateTile method
-            return CreateTile(type, new Position(x, y));
-        }
+        
 
         // Method to initialize all tiles to EmptyTiles
-        public void InitialiseTiles()
+        /*public void InitialiseTiles()
         {
             // Loop through each position in the 2D array and set to EmptyTile
             for (int x = 0; x < width; x++)
@@ -129,7 +132,7 @@ namespace GADE6112_Part1_ST10094307
                     CreateTile(TileType.Empty, x, y);
                 }
             }
-        }
+        }*/
 
         // Override ToString method to provide a visual representation of the level
         public override string ToString()
