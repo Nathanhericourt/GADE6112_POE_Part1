@@ -39,7 +39,7 @@
             this.lblDisplay.Size = new System.Drawing.Size(100, 23);
             this.lblDisplay.TabIndex = 0;
             this.lblDisplay.Text = "Display";
-            this.lblDisplay.Click += new System.EventHandler(this.label1_Click);
+            this.lblDisplay.Click += new System.EventHandler(this.Label1_Click);
             // 
             // Form1
             // 

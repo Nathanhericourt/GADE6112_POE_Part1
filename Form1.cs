@@ -35,7 +35,7 @@ namespace GADE6112_Part1_ST10094307
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
