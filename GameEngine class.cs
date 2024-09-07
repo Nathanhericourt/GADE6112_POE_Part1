@@ -19,12 +19,10 @@ namespace GADE6112_Part1_ST10094307
         {
             this.numberOfLevels = numberOfLevels;
             random = new Random();
-
             int width = random.Next(MIN_SIZE, MAX_SIZE + 1);
             int height = random.Next(MIN_SIZE, MAX_SIZE + 1);
             currentLevel = new Level(width, height);
         }
-
         public override string ToString()
         {
             return $"GameEngine_class with {numberOfLevels} levels";
