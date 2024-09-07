@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE6112_Part1_ST10094307
 {
-    class EmptyTile :Tile
+    class EmptyTile : Tile
     {
         //Constructor accepting the Position parameters.
         public EmptyTile(Position p): base(p)

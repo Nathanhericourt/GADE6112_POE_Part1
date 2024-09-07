@@ -63,19 +63,11 @@ namespace GADE6112_Part1_ST10094307
                     tile = new EmptyTile(position);
                     tiles[position.X, position.Y] = tile;
                     return tile;
-                    break;
-                    
-                    //case TileType.Wall:
-
-                    
+                   //case TileType.Wall:
                    // return tile;
-                    //break;
-                    // Additional cases for other tile types can be added here
-            }
-
-            
-
-           
+                   //break;
+                   // Additional cases for other tile types can be added here
+            }   
         }
 
         // Method to initialize all tiles to empty
@@ -148,12 +140,8 @@ namespace GADE6112_Part1_ST10094307
                     sb.Append(tiles[x, y].Display); // Access Tile's Display property
                 }
                 sb.AppendLine(); // New line after each row
-
-               
             }
-
             return sb.ToString(); // Return the constructed string
-
         }
     }
 }
