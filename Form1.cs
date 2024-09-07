@@ -12,7 +12,7 @@ namespace GADE6112_Part1_ST10094307
 {
     public partial class Form1 : Form
     {
-        private GameEngine_class gameEngine;
+        private readonly GameEngine_class gameEngine;
         public Form1()
         {
             InitializeComponent();
@@ -28,16 +28,6 @@ namespace GADE6112_Part1_ST10094307
         private void UpdateDisplay()
         {
             lblDisplay.Text = gameEngine.ToString();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

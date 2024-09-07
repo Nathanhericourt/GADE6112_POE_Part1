@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE6112_Part1_ST10094307
 {
-    /*something needs to be here*/ class WallTile : Tile
+    internal class WallTile : Tile
     {
         private WallTile(Position position):
             base(position)

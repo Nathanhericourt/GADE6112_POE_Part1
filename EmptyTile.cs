@@ -16,7 +16,7 @@ namespace GADE6112_Part1_ST10094307
         //Override the get accessor.
         public override char Display
         {
-            get { return '.'; }
+            get { return '|'; }
         }
     }
 }

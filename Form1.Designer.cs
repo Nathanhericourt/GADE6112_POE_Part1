@@ -39,7 +39,6 @@
             this.lblDisplay.Size = new System.Drawing.Size(100, 23);
             this.lblDisplay.TabIndex = 0;
             this.lblDisplay.Text = "Display";
-            this.lblDisplay.Click += new System.EventHandler(this.Label1_Click);
             // 
             // Form1
             // 
@@ -49,7 +48,6 @@
             this.Controls.Add(this.lblDisplay);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
