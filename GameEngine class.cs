@@ -27,8 +27,7 @@ namespace GADE6112_Part1_ST10094307
 
         public override string ToString()
         {
-            return currentLevel.ToString();
+            return $"GameEngine_class with {numberOfLevels} levels";
         }
     }
-
 }

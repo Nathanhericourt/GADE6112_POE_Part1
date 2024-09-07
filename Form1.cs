@@ -22,7 +22,7 @@ namespace GADE6112_Part1_ST10094307
 
         private GameEngine_class GameEngine_class(int v)
         {
-            throw new NotImplementedException();
+            return new GameEngine_class(v);
         }
 
         private void UpdateDisplay()
