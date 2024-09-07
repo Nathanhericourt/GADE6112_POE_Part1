@@ -29,5 +29,15 @@ namespace GADE6112_Part1_ST10094307
         {
             lblDisplay.Text = gameEngine.ToString();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
