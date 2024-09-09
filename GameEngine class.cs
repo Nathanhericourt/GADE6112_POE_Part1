@@ -8,7 +8,7 @@ namespace GADE6112_Part1_ST10094307
 {
     public class GameEngine_class
     {
-        private Level currentLevel;
+        //private Level currentLevel;
         private int numberOfLevels;
         private Random random;
 
@@ -21,7 +21,7 @@ namespace GADE6112_Part1_ST10094307
             random = new Random();
             int width = random.Next(MIN_SIZE, MAX_SIZE + 1);
             int height = random.Next(MIN_SIZE, MAX_SIZE + 1);
-            currentLevel = new Level(width, height);
+            //currentLevel = new Level(width, height);
         }
         public override string ToString()
         {

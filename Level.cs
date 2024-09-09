@@ -14,7 +14,22 @@ namespace GADE6112_Part1_ST10094307
         public enum TileType
         {
            Empty,
-           Wall
+           Wall,
+        }
+        public class Tile
+        {
+            public TileType Type { get; private set; }
+            public string Display { get; internal set; }
+
+            public Tile(TileType type)
+            {
+                Type = type;
+            }
+
+            internal static Tile CreateTile(TileType wall)
+            {
+                throw new NotImplementedException();
+            }
         }
         // Private fields
         private Tile[,] tiles; //2d Array
@@ -48,83 +63,37 @@ namespace GADE6112_Part1_ST10094307
         }
 
         // Private method to create a tile
-        private Tile CreateTile(TileType type, int x, int y)
+        public static Tile CreateTile(TileType type)
         {
-            Position position = new Position(x, y);
-            Tile tile;
-
             switch (type)
             {
+                case TileType.Wall:
+                    return new Tile(TileType.Wall);
                 case TileType.Empty:
-                    tile = new EmptyTile(position);
-                    tiles[position.X, position.Y] = tile;
-                    return tile;
                 default:
-                    tile = new EmptyTile(position);
-                    tiles[position.X, position.Y] = tile;
-                    return tile;
-                   //case TileType.Wall:
-                   // return tile;
-                   //break;
+                    return new Tile(TileType.Empty);
                    // Additional cases for other tile types can be added here
             }   
         }
 
         // Method to initialize all tiles to empty
-        public void InitialiseTiles()
+        private void InitialiseTiles()
         {
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
                 {
-                    tiles[x, y] = CreateTile(TileType.Empty, x, y);
+                    if (x == 0 || y == 0 || x == width - 1 || y == height - 1)
+                    {
+                        tiles[x, y] = Tile.CreateTile(TileType.Wall);
+                    }
+                    else
+                    {
+                        tiles[x, y] = Tile.CreateTile(TileType.Empty);
+                    }
                 }
             }
         }
-
-        // Helper method to update the tile at a specific position
-        /*public void UpdateTile(Position position, TileType newType)
-        {
-            if (position.X >= 0 && position.X < width && position.Y >= 0 && position.Y < height)
-            {
-                CreateTile(newType, position);
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException("Position is out of bounds.");
-            }
-        }*/
-             
-
-        // Method to get a tile at a specific position
-        /*public Tile GetTile(Position position)
-        {
-            if (position.X >= 0 && position.X < width && position.Y >= 0 && position.Y < height)
-            {
-                return tiles[position.X, position.Y];
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException("Position is out of bounds.");
-            }
-        }*/
-
-
-        // Overloaded version of CreateTile that accepts x and y integers
-        
-
-        // Method to initialize all tiles to EmptyTiles
-        /*public void InitialiseTiles()
-        {
-            // Loop through each position in the 2D array and set to EmptyTile
-            for (int x = 0; x < width; x++)
-            {
-                for (int y = 0; y < height; y++)
-                {
-                    CreateTile(TileType.Empty, x, y);
-                }
-            }
-        }*/
 
         // Override ToString method to provide a visual representation of the level
         public override string ToString()

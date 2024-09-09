@@ -28,11 +28,16 @@ namespace GADE6112_Part1_ST10094307
         //Abstract Property with char type.
         public abstract char Display { get; }
 
+        internal static Tile CreateTile(Level.TileType wall)
+        {
+            throw new NotImplementedException();
+        }
+
         //constructor to assign parameter to position field.
         /*public Tile(Position position)
         {
             X = position.X;
             Y = position.Y;
         }*/
-  }
+    }
 }

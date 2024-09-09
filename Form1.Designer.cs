@@ -38,7 +38,6 @@
             this.lblDisplay.Name = "lblDisplay";
             this.lblDisplay.Size = new System.Drawing.Size(100, 23);
             this.lblDisplay.TabIndex = 0;
-            this.lblDisplay.Text = "Display";
             // 
             // Form1
             // 
